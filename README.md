@@ -27,7 +27,27 @@ That's it. The preview window appears automatically on the right side whenever m
 - ✨ Automatic preview window on the right side
 - 🎨 Inherits picker's border and highlight styles
 - 🎯 Works with all mini.pick built-in pickers (files, buffers, etc.)
+- 🔀 Git-aware preview: shows commit stats and branch logs automatically
+- 📜 Scrollable preview with `<C-j>` / `<C-k>`
 - ⚡ Lightweight and non-intrusive
+
+## Keymaps
+
+These mappings are active inside every picker session:
+
+| Key     | Action                     |
+|---------|----------------------------|
+| `<C-j>` | Scroll preview window down |
+| `<C-k>` | Scroll preview window up   |
+
+## Git support
+
+When browsing git-related items, the preview window automatically adapts:
+
+- **Commits** — runs `git show --stat` for the selected hash
+- **Branches** — runs `git log --oneline -20` for the selected branch
+
+For all other items, the plugin falls back to `MiniPick.default_preview`.
 
 ## Requirements
 
